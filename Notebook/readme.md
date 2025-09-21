@@ -2,8 +2,7 @@
 
 Forecast hourly PM2.5 levels in Beijing using sequence models (GRU/LSTM/BiLSTM/CNN-LSTM) with engineered time, weather, and interaction features. The workflow trains multiple architectures over sliding windows, selects the best via validation RMSE, retrains with longer patience, and generates a Kaggle-ready submission.
 
-- Main notebook (best, clean, end-to-end): [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code.ipynb)
-- Additional notebooks: [Beijing_Air_Quality_Forecasting.ipynb](Beijing_Air_Quality_Forecasting.ipynb), [AQ.ipynb](AQ.ipynb), [AQ2.ipynb](AQ2.ipynb)
+- Main notebook (best, clean, end-to-end): [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code_final.ipynb)
 - Data: [train.csv](train.csv), [test.csv](test.csv), [sample_submission .csv](sample_submission .csv)
 - Example outputs: [submission_seq_models.csv](submission_seq_models.csv), [submission_seq_models2.csv](submission_seq_models2.csv)
 
