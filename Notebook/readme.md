@@ -25,13 +25,13 @@ This project applies sequence models (RNN/GRU/LSTM) to forecast PM2.5. It:
 - Predicts test windows and writes Kaggle submission
 
 Primary helpers in the main notebook:
-- Feature engineering: [`create_beijing_features`](Notebook/air_quality_forecasting_starter_code.ipynb)
-- Windowing: [`make_windows`](Notebook/air_quality_forecasting_starter_code.ipynb), [`train_val_split_windows`](Notebook/air_quality_forecasting_starter_code.ipynb)
-- Models: [`build_gru`](Notebook/air_quality_forecasting_starter_code.ipynb), [`build_lstm`](Notebook/air_quality_forecasting_starter_code.ipynb), [`build_cnn_lstm`](Notebook/air_quality_forecasting_starter_code.ipynb)
+- Feature engineering: [`create_beijing_features`](Notebook/air_quality_forecasting_starter_code_final.ipynb)
+- Windowing: [`make_windows`](Notebook/air_quality_forecasting_starter_code_final.ipynb), [`train_val_split_windows`](Notebook/air_quality_forecasting_starter_code.ipynb)
+- Models: [`build_gru`](Notebook/air_quality_forecasting_starter_code_final.ipynb), [`build_lstm`](Notebook/air_quality_forecasting_starter_code_final.ipynb), [`build_cnn_lstm`](Notebook/air_quality_forecasting_starter_code_final.ipynb)
 
 ## Project structure
 - Notebooks
-  - [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code.ipynb) – main pipeline and submission
+  - [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code_final.ipynb) – main pipeline and submission
   - [Beijing_Air_Quality_Forecasting.ipynb](Beijing_Air_Quality_Forecasting.ipynb) – exploratory LSTM experiments
   - [AQ.ipynb](AQ.ipynb), [AQ2.ipynb](AQ2.ipynb) – alternative baselines, analyses
 - Data files
@@ -51,7 +51,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
 Optional: set a virtual environment before installing.
 
 ## End-to-end workflow
-Run cells top-to-bottom in [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code.ipynb):
+Run cells top-to-bottom in [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code_final.ipynb):
 
 1) Load data
 - Reads [train.csv](train.csv) and [test.csv](test.csv), parses datetime index.
@@ -69,10 +69,10 @@ Run cells top-to-bottom in [Notebook/air_quality_forecasting_starter_code.ipynb]
 - Fit scaler on train; transform train/test consistently.
 
 6) Sliding windows and time-aware split
-- Build 24/48/72h windows using [`make_windows`](Notebook/air_quality_forecasting_starter_code.ipynb). Split via [`train_val_split_windows`](Notebook/air_quality_forecasting_starter_code.ipynb) (no future leakage).
+- Build 24/48/72h windows using [`make_windows`](Notebook/air_quality_forecasting_starter_code_final.ipynb). Split via [`train_val_split_windows`](Notebook/air_quality_forecasting_starter_code.ipynb) (no future leakage).
 
 7) Model builders
-- [`build_gru`](Notebook/air_quality_forecasting_starter_code.ipynb), [`build_lstm`](Notebook/air_quality_forecasting_starter_code.ipynb), [`build_cnn_lstm`](Notebook/air_quality_forecasting_starter_code.ipynb), BiLSTM option.
+- [`build_gru`](Notebook/air_quality_forecasting_starter_code_final.ipynb), [`build_lstm`](Notebook/air_quality_forecasting_starter_code_final.ipynb), [`build_cnn_lstm`](Notebook/air_quality_forecasting_starter_code_final.ipynb), BiLSTM option.
 
 8) Systematic experiments (16 total)
 - Grid across sequence lengths × architectures, then LR ablation on the best.
@@ -119,5 +119,4 @@ The notebook automatically selects the best by lowest validation RMSE.
 This project uses the provided datasets and is intended for educational and competition purposes.
 
 ## References
-- Main pipeline: [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code.ipynb)
-- Supporting experiments: [Beijing_Air_Quality_Forecasting.ipynb](Beijing_Air_Quality_Forecasting.ipynb),
+- Main pipeline: [Notebook/air_quality_forecasting_starter_code.ipynb](Notebook/air_quality_forecasting_starter_code_final.ipynb)
